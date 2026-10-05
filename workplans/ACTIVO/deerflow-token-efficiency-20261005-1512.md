@@ -68,17 +68,17 @@ Explicitly out of scope:
 - [x] Task 1.4: Validate configuration schema against DeerFlow gateway loader — `docker exec deer-flow-gateway /app/backend/.venv/bin/python -c "from deerflow.config.app_config import reload_app_config; cfg = reload_app_config(); assert cfg.tool_search.enabled and cfg.token_budget.enabled; print('CONFIG VALID')"`
 
 **Acceptance:** `docker exec deer-flow-gateway /app/backend/.venv/bin/python -c "from deerflow.config.app_config import reload_app_config; cfg = reload_app_config(); assert cfg.tool_search.enabled and cfg.token_budget.enabled; print('GATEWAY CONFIG OK')"`
-**Commit:** `pending`
+**Commit:** `6478a0d`
 
 ## Phase 2: Autonomous Memory & Token Optimization Skill
 
 **Goal:** Deploy a dedicated `engram-memory` skill in `skills/public/` that autonomously directs subagents to check persistent memory before scraping and write distilled summaries to avoid redundant context.
 
-- [ ] Task 2.1: Author `skills/public/engram-memory/SKILL.md` with trigger conditions and memory search/save protocol — `test -f skills/public/engram-memory/SKILL.md`
-- [ ] Task 2.2: Verify skill format and validity using DeerFlow skill loader — `docker exec deer-flow-gateway /app/backend/.venv/bin/python -c "from deerflow.skills.scanner import scan_skills; skills = scan_skills(['/app/skills/public']); assert 'engram-memory' in [s.name for s in skills]; print('SKILL DISCOVERED OK')"`
-- [ ] Task 2.3: Restart DeerFlow gateway and verify health endpoint — `curl -s -f http://localhost:8001/health || curl -s -f http://localhost:2026/health`
+- [x] Task 2.1: Author `skills/public/engram-memory/SKILL.md` with trigger conditions and memory search/save protocol — `test -f skills/public/engram-memory/SKILL.md`
+- [x] Task 2.2: Verify skill format and validity using DeerFlow skill loader — `docker exec deer-flow-gateway /app/backend/.venv/bin/python -c "from deerflow.skills.storage.local_skill_storage import LocalSkillStorage; storage = LocalSkillStorage(host_path='/app/skills'); skills = storage.load_skills(); assert 'engram-memory' in [s.name for s in skills]; print('SKILL DISCOVERED OK')"`
+- [x] Task 2.3: Restart DeerFlow gateway and verify health endpoint — `docker exec deer-flow-gateway curl -s -o /dev/null -w "%{http_code}\n" http://localhost:8001/api/v1/auth/preferences`
 
-**Acceptance:** `docker exec deer-flow-gateway /app/backend/.venv/bin/python -c "from deerflow.skills.scanner import scan_skills; skills = scan_skills(['/app/skills/public']); assert 'engram-memory' in [s.name for s in skills]; print('ALL SKILLS READY')"`
+**Acceptance:** `docker exec deer-flow-gateway /app/backend/.venv/bin/python -c "from deerflow.skills.storage.local_skill_storage import LocalSkillStorage; storage = LocalSkillStorage(host_path='/app/skills'); skills = storage.load_skills(); assert 'engram-memory' in [s.name for s in skills]; print('ALL SKILLS READY')"`
 **Commit:** `pending`
 
 ---
