@@ -63,14 +63,14 @@ Explicitly out of scope:
 - [x] Task 1.3: Verify `load_agent_soul()` execution inside DeerFlow gateway — `docker exec deer-flow-gateway /app/backend/.venv/bin/python -c "from deerflow.config.agents_config import load_agent_soul; soul = load_agent_soul(None); assert 'Metametodología Canónica' in soul; print('SOUL LOADED OK')"`
 
 **Acceptance:** `docker exec deer-flow-gateway /app/backend/.venv/bin/python -c "from deerflow.config.agents_config import load_agent_soul; soul = load_agent_soul(None); assert 'Metametodología Canónica' in soul; print('DEERFLOW LEAD AGENT READY')"`
-**Commit:** `pending`
+**Commit:** `8530fa0`
 
 ## Phase 2: Upgrade OpenCode & OMP looper-boss.md
 
 **Goal:** Infuse the canonical metamethodology into OpenCode and OMP looper-boss prompt definitions.
 
-- [ ] Task 2.1: Update `/home/leodev/.config/opencode/prompts/sdd/looper-boss.md` with 4 Axioms, FSM, Regime-gated triage, and Poka-Yoke gates — `grep "Metametodología Canónica" /home/leodev/.config/opencode/prompts/sdd/looper-boss.md`
-- [ ] Task 2.2: Update `/home/leodev/.omp/agent/agents/looper-boss.md` with matching canonical rules — `grep "Metametodología Canónica" /home/leodev/.omp/agent/agents/looper-boss.md`
+- [x] Task 2.1: Update `/home/leodev/.config/opencode/prompts/sdd/looper-boss.md` with 4 Axioms, FSM, Regime-gated triage, and Poka-Yoke gates — `grep "Metametodología Canónica" /home/leodev/.config/opencode/prompts/sdd/looper-boss.md`
+- [x] Task 2.2: Update `/home/leodev/.omp/agent/agents/looper-boss.md` with matching canonical rules — `grep "Metametodología Canónica" /home/leodev/.omp/agent/agents/looper-boss.md`
 
 **Acceptance:** `grep -q "Metametodología Canónica" /home/leodev/.config/opencode/prompts/sdd/looper-boss.md && grep -q "Metametodología Canónica" /home/leodev/.omp/agent/agents/looper-boss.md && echo "OPENCODE & OMP READY"`
 **Commit:** `pending`
