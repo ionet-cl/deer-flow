@@ -73,24 +73,30 @@ Explicitly out of scope:
 - [x] Task 2.2: Update `/home/leodev/.omp/agent/agents/looper-boss.md` with matching canonical rules — `grep "Metametodología Canónica" /home/leodev/.omp/agent/agents/looper-boss.md`
 
 **Acceptance:** `grep -q "Metametodología Canónica" /home/leodev/.config/opencode/prompts/sdd/looper-boss.md && grep -q "Metametodología Canónica" /home/leodev/.omp/agent/agents/looper-boss.md && echo "OPENCODE & OMP READY"`
-**Commit:** `pending`
+**Commit:** `adf519f`
 
 ## Phase 3: Deploy looper-boss to Pi & AGY
 
 **Goal:** Establish canonical `looper-boss` in Pi agent catalog and Antigravity plugin skills.
 
-- [ ] Task 3.1: Create `/home/leodev/.pi/agent/agents/looper-boss.md` with Pi metadata header — `test -f /home/leodev/.pi/agent/agents/looper-boss.md`
-- [ ] Task 3.2: Create `/home/leodev/.gemini/config/plugins/looper-agents/skills/looper-boss/SKILL.md` with AGY skill frontmatter — `test -f /home/leodev/.gemini/config/plugins/looper-agents/skills/looper-boss/SKILL.md`
+- [x] Task 3.1: Create `/home/leodev/.pi/agent/agents/looper-boss.md` with Pi metadata header — `test -f /home/leodev/.pi/agent/agents/looper-boss.md`
+- [x] Task 3.2: Create `/home/leodev/.gemini/config/plugins/looper-agents/skills/looper-boss/SKILL.md` with AGY skill frontmatter — `test -f /home/leodev/.gemini/config/plugins/looper-agents/skills/looper-boss/SKILL.md`
 
 **Acceptance:** `test -f /home/leodev/.pi/agent/agents/looper-boss.md && test -f /home/leodev/.gemini/config/plugins/looper-agents/skills/looper-boss/SKILL.md && echo "PI & AGY READY"`
-**Commit:** `pending`
+**Commit:** external artifacts (~/.pi and ~/.gemini)
 
 ---
 
 ## Closeout
 
-- [ ] 100% of phases committed and green
-- [ ] Workplan moved to `workplans/ARCHIVO/canonical-looper-boss-and-lead-agent-20261005-1537.md`
-- [ ] Evidence recorded below
+- [x] 100% of phases committed and green
+- [x] Workplan moved to `workplans/ARCHIVO/canonical-looper-boss-and-lead-agent-20261005-1537.md`
+- [x] Evidence recorded below
 
 **Evidence:**
+- DeerFlow Lead Agent: `backend/.deer-flow/SOUL.md` verified with `load_agent_soul()` returning canonical axioms and FSM (Commit `8530fa0`).
+- OpenCode: `~/.config/opencode/prompts/sdd/looper-boss.md` upgraded with Metametodología Canónica.
+- OMP: `~/.omp/agent/agents/looper-boss.md` upgraded with Metametodología Canónica (Commit `adf519f`).
+- Pi: `~/.pi/agent/agents/looper-boss.md` created with metadata headers and canonical contract.
+- AGY: `~/.gemini/config/plugins/looper-agents/skills/looper-boss/SKILL.md` deployed with skill frontmatter.
+
