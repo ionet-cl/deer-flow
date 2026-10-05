@@ -79,14 +79,22 @@ Explicitly out of scope:
 - [x] Task 2.3: Restart DeerFlow gateway and verify health endpoint — `docker exec deer-flow-gateway curl -s -o /dev/null -w "%{http_code}\n" http://localhost:8001/api/v1/auth/preferences`
 
 **Acceptance:** `docker exec deer-flow-gateway /app/backend/.venv/bin/python -c "from deerflow.skills.storage.local_skill_storage import LocalSkillStorage; storage = LocalSkillStorage(host_path='/app/skills'); skills = storage.load_skills(); assert 'engram-memory' in [s.name for s in skills]; print('ALL SKILLS READY')"`
-**Commit:** `pending`
+**Commit:** `7fcb87d`
 
 ---
 
 ## Closeout
 
-- [ ] 100% of phases committed and green
-- [ ] Workplan moved to `workplans/ARCHIVO/deerflow-token-efficiency-20261005-1512.md`
-- [ ] Evidence recorded below
+- [x] 100% of phases committed and green
+- [x] Workplan moved to `workplans/ARCHIVO/deerflow-token-efficiency-20261005-1512.md`
+- [x] Evidence recorded below
 
 **Evidence:**
+
+```
+Phase 1: reload_app_config() -> exit 0, GATEWAY CONFIG OK (commit: 6478a0d)
+Phase 2: LocalSkillStorage.load_skills() -> exit 0, ALL SKILLS READY (commit: 7fcb87d)
+Gateway Health: curl http://localhost:8001/api/v1/auth/preferences -> HTTP 401 (exit 0)
+Total Discovered MCP Tools: 19
+Total Discovered Skills: 24
+```
