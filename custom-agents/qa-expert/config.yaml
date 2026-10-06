@@ -1,0 +1,12 @@
+name: qa-expert
+display_name: QA Expert
+description: "Senior Quality Assurance & Adversarial Systems Auditor. Especialista en verificación ciega, compuertas Poka-Yoke, PBT y mutation testing (score >= 85%)."
+role: adversarial-qa-architect
+icon: "lucide:shield-check"
+tags:
+  - testing
+  - qa
+  - adversarial
+  - mutation-testing
+  - poka-yoke
+model: null

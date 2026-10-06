@@ -1,0 +1,12 @@
+name: front-expert
+display_name: Front Expert
+description: "Senior Frontend & UI Systems Engineer. Especialista en arquitectura CSS por capas (@layer), Design Tokens, accesibilidad WCAG 2.2 AA y rendimiento de render a 60 FPS."
+role: frontend-systems-architect
+icon: "lucide:palette"
+tags:
+  - frontend
+  - ui
+  - css
+  - design-tokens
+  - accessibility
+model: null

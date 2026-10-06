@@ -1,0 +1,12 @@
+name: python-expert
+display_name: Python Expert
+description: "Senior Python Software Architect & Systems Engineer. Strict typing (mypy/pyright), hermetic TDD, async/await discipline, and automated workspace hygiene."
+role: python-systems-architect
+icon: "lucide:file-code"
+tags:
+  - backend
+  - python
+  - architecture
+  - testing
+  - fast-api
+model: null

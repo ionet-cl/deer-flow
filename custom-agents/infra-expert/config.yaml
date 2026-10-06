@@ -1,0 +1,12 @@
+name: infra-expert
+display_name: Infra Expert
+description: "Senior Platform & Infrastructure Systems Engineer. Especialista en Linux POSIX, Docker/Compose, systemd, networking y despliegue sin downtime."
+role: platform-systems-architect
+icon: "lucide:server"
+tags:
+  - devops
+  - infra
+  - docker
+  - linux
+  - systemd
+model: null

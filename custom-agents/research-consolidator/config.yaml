@@ -1,0 +1,5 @@
+name: research-consolidator
+display_name: "Research Consolidator"
+description: "Consolidador técnico adversarial: sintetiza múltiples reportes independientes en un único Single Source of Truth (SSOT) canónico."
+skills:
+  - engram-memory
