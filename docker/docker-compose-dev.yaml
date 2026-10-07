@@ -224,7 +224,8 @@ services:
       # DooD: the host Docker socket is NOT mounted by default. It is added only
       # for aio (pure-DooD) sandbox mode via the opt-in docker-compose.dood.yaml
       # overlay (appended by scripts/docker.sh). See backend/docs/CONFIGURATION.md 
-      
+      - /var/run/docker.sock:/var/run/docker.sock
+
       # CLI auth dirs (Claude Code / Codex) are NOT mounted by default: they
       # expose the entire ~/.claude and ~/.codex (history, projects, global
       # config, credentials) into the container. Mount them only when you use
