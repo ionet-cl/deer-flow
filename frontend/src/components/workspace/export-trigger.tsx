@@ -16,7 +16,6 @@ import { exportThread, type ThreadExportFormat } from "@/core/threads/export";
 import type { AgentThread } from "@/core/threads/types";
 
 import { useThread } from "./messages/context";
-import { Tooltip } from "./tooltip";
 
 export function ExportTrigger({ threadId }: { threadId: string }) {
   const { t } = useI18n();
@@ -52,18 +51,16 @@ export function ExportTrigger({ threadId }: { threadId: string }) {
 
   return (
     <DropdownMenu>
-      <Tooltip content={t.common.export}>
-        <DropdownMenuTrigger asChild>
-          <Button
-            aria-label={t.common.export}
-            className="text-muted-foreground hover:text-foreground"
-            variant="ghost"
-          >
-            <Download />
-            <span className="hidden sm:inline">{t.common.export}</span>
-          </Button>
-        </DropdownMenuTrigger>
-      </Tooltip>
+      <DropdownMenuTrigger asChild>
+        <Button
+          aria-label={t.common.export}
+          className="text-muted-foreground hover:text-foreground"
+          variant="ghost"
+        >
+          <Download />
+          <span className="hidden sm:inline">{t.common.export}</span>
+        </Button>
+      </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onSelect={() => handleExport("markdown")}>
           <FileText className="text-muted-foreground" />

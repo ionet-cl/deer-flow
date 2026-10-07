@@ -30,7 +30,6 @@ import {
 import { bindFrontendServices } from "@/core/extensions/services";
 import { useI18n } from "@/core/i18n/hooks";
 
-import { Tooltip } from "./tooltip";
 
 /** Shared host slot used by the chat toolbar AND every sidebar conversation. */
 export function ConversationExtensionActions({
@@ -100,19 +99,17 @@ export function ConversationExtensionActions({
         );
       return (
         <DropdownMenu key={contribution.namespace}>
-          <Tooltip content={group.label}>
-            <DropdownMenuTrigger asChild>
-              <Button
-                aria-label={group.label}
-                className="text-muted-foreground hover:text-foreground"
-                variant="ghost"
-                disabled={busy}
-              >
-                <GroupIcon />
-                <span className="hidden sm:inline">{group.label}</span>
-              </Button>
-            </DropdownMenuTrigger>
-          </Tooltip>
+          <DropdownMenuTrigger asChild>
+            <Button
+              aria-label={group.label}
+              className="text-muted-foreground hover:text-foreground"
+              variant="ghost"
+              disabled={busy}
+            >
+              <GroupIcon />
+              <span className="hidden sm:inline">{group.label}</span>
+            </Button>
+          </DropdownMenuTrigger>
           <DropdownMenuContent align="end">{items}</DropdownMenuContent>
         </DropdownMenu>
       );
