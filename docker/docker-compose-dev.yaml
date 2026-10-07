@@ -218,6 +218,9 @@ services:
       # On macOS/Docker Desktop, uv may fail to create symlinks inside shared
       # host directories, which causes startup-time `uv sync` to crash.
       - gateway-uv-cache:/root/.cache/uv
+      # Mount host repositories so DeerFlow agents can research and develop across local projects
+      - /home/leodev/repos:/home/leodev/repos:rw
+      - /home/leodev/repos:/repos:rw
       # DooD: the host Docker socket is NOT mounted by default. It is added only
       # for aio (pure-DooD) sandbox mode via the opt-in docker-compose.dood.yaml
       # overlay (appended by scripts/docker.sh). See backend/docs/CONFIGURATION.md 
