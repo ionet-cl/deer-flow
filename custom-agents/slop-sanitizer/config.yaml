@@ -1,4 +1,5 @@
 name: slop-sanitizer
 display_name: "AI Slop Sanitizer"
 description: "Auditor técnico y refactorizador léxico especializado en erradicar AI slop, jerga inflada y lore artificial."
-skills: []
+skills:
+  - engram-memory

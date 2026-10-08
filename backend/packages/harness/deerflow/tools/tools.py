@@ -346,3 +346,6 @@ def get_available_tools(
                 t.name,
             )
     return unique_tools
+
+
+get_builtin_tools = get_available_tools
